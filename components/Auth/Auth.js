@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../../store/auth-slice";
 
 function Auth() {
+    console.log('Auth');
     const dispatch = useDispatch();
     const { username, password, isAuthenticated, loginMode } = useSelector(state => state.auth);
 
@@ -51,7 +52,7 @@ function Auth() {
                 { loginMode && <button onClick={handleToggleMode}>Don't have an account yet?</button>}
             </form>
         </Fragment>
-    )
+    );
 }
 
 export default Auth;
