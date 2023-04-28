@@ -6,8 +6,8 @@ const authSlice = createSlice({
         username: '',
         password: '',
         email:'',
-        isAuthenticated: false,
-        loginMode: true,
+        isAuthenticated: 'false',
+        mode: 'login',
     },
     reducers:{
         setUsername: (state, action) => {
@@ -16,11 +16,14 @@ const authSlice = createSlice({
         setPassword: (state, action) => {
             state.password = action.payload;
         },
-        toggleMode(state){
-            state.loginMode = !state.loginMode;
+        setEmail: (state, action) => {
+            state.email = action.payload;
         },
-        toggleAuthentication(state){
-            state.isAuthenticated = !state.isAuthenticated;
+        toggleMode(state, action){
+            state.mode = action.payload;
+        },
+        toggleAuthentication(state, action){
+            state.isAuthenticated = action.payload;
         }
     },
 });
